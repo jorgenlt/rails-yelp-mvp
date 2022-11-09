@@ -13,7 +13,28 @@
       <p><strong><%= @restaurant.category.capitalize %></strong></p>
       <p><%= @restaurant.address %></p>
       <p><%= @restaurant.phone_number %></p>
+
     </div>
+  </div>
+
+  <div class="d-flex container-form row form-control">
+      <h4>Write a review</h4>
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <%= f.input :rating, collection: 0..5 %>
+        <%= f.input :content %>
+        <%= f.submit class: "mb-2" %>
+      <% end %>
+  </div>
+
+  <div>
+    <% @restaurant.reviews.each do |review| %>
+    <div class="d-flex">
+      <div class="">
+        <h4><%= review.rating %></h4>
+        <p><%= review.content %></p>
+      </div>
+    </div>
+    <% end %>
   </div>
 
 </div>
