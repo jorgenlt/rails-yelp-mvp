@@ -1,0 +1,19 @@
+<% img = "https://picsum.photos/300/300?random=#{@restaurant.id + 51}" %>
+
+<div class="container">
+
+  <div class="card-category mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    <%= @restaurant.name %>
+  </div>
+
+  <div class="card-product">
+    <img src=<%= img %> />
+    <div class="card-product-infos">
+      <h2><%= @restaurant.name %></h2>
+      <p><strong><%= @restaurant.category.capitalize %></strong></p>
+      <p><%= @restaurant.address %></p>
+      <p><%= @restaurant.phone_number %></p>
+    </div>
+  </div>
+
+</div>

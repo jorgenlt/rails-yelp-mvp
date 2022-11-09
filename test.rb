@@ -1,0 +1,3 @@
+
+
+pp Faker::Book.title

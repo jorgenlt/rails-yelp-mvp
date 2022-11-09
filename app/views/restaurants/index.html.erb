@@ -1,0 +1,16 @@
+<div class="container">
+  <% @restaurants.each do |restaurant, i| %>
+    <% img = "https://picsum.photos/300/300?random=#{restaurant.id + 51}" %>
+    <%= link_to restaurant_path(restaurant) do %>
+      <div class="card-product m-4">
+        <img src=<%= img %> />
+        <div class="card-product-infos">
+          <h2><%= restaurant.name %></h2>
+          <p><strong><%= restaurant.category.capitalize %></strong></p>
+          <p id="article-content"><%= restaurant.address %></p>
+          <p><%= restaurant.phone_number %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
